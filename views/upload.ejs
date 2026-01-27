@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CAD File Uploader</title>
+    <style>
+        .upload-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .progress {
+            width: 0%;
+            height: 100%;
+            background-color: #4CAF50;
+            border-radius: 10px;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .preview-container {
+            margin-top: 20px;
+            max-width: 100%;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="upload-container">
+        <h2>CAD File Uploader</h2>
+        <form action="https://behomes-1.onrender.com/basicDrawing/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="cadFile" required />
+            <button type="submit">Upload</button>
+        </form>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <div class="preview-container" id="svgPreview"></div>
+    </div>
+
+
+</body>
+
+</html>
