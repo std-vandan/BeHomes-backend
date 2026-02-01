@@ -34,26 +34,7 @@ app.use(cors(corsOptions));
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.set('view engine', 'ejs');
-app.use('/uploads', express.static('uploads'));
-
-const MongoStore = require('connect-mongo');
-
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET || "yourSecretKey",
-    resave: false,
-    saveUninitialized: false,
-    store: MongoStore.create({
-      mongoUrl: process.env.MONGODB_URI, // Your MongoDB connection string
-      collectionName: "sessions",
-    }),
-    cookie: {
-      secure: process.env.NODE_ENV === "production",
-      httpOnly: true,
-      maxAge: 1000 * 60 * 60 * 24, // 1 day
-    },
-  })
-);
+a
 
 
 
